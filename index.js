@@ -25,7 +25,7 @@ app.post("/crear_Verdureria", async (req, res) => {
 
 app.delete(`/Verdureria/:id`, async (req, res) => {
   const { id } = req.params;
-  const estudiante = await prisma.estudiante.delete({
+  const Verdureria = await prisma.vegetales.delete({
     where: {
       id: Number(id),
     },
@@ -36,7 +36,7 @@ app.delete(`/Verdureria/:id`, async (req, res) => {
 app.put("/Verdureria/:id", async (req, res) => {
   const { id } = req.params;
   try {
-    const datosActualizados = await prisma.estudiante.update({
+    const Verdureria = await prisma.vegetales.update({
       where: { id: Number(id) },
       // req.body es la info que manda el usuario para actualizar
       data: req.body,
